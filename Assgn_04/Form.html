@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Feedback</title>
+  <style>
+    label {	float: left;
+			width: 150px;}
+      #container{
+          width: 700px;
+          margin: auto;
+          background-color:#006241d8;
+		  
+      } 
+      main{
+          padding: 50px;
+		  
+      }
+
+	  h2, h3 {
+            text-align: center;
+        }
+
+	  #logo {
+        position: absolute;
+        top: 20px;
+        left: 680px;
+        width: 80px; 
+        height: auto;
+		size: 100px;
+    }
+
+
+#submitBtn, input[type="Reset"] {
+  display: block;
+  margin: 100 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+
+#dataTable {
+    width: 100%; 
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #d2d2d2; 
+}
+
+#dataTable th, #dataTable td {
+    border: 1px solid #000000;
+    text-align: left; 
+    padding: 8px; 
+}
+
+#dataTable th {
+    background-color: #d4d4d4; 
+}
+
+  </style>
+  <script src="Form.js"></script>
+ </head>
+ <body>
+ <div id="container">
+
+	<img id="logo" src="images/logo.png" alt="Starbucks Logo">
+	 
+	 <main>
+	 <h2>Help Us Brew a Better Experience!</h2>
+	 <h3>Your feedback is the secret ingredient to making every sip smoother!</h3>
+	 <br><br>
+	     Note: Fields marked with an asterisk (*) are required.
+		 <br><br>
+		 <form id="my-form" method="post" novalidate>
+			<label><b>* Title :</b></label>
+			<input type="radio" name="title" id="Miss" value="Miss" required="required"/>Miss
+			<input type="radio" name="title" id="Mr" value="Mr" required="required"/>Mr.
+			<input type="radio" name="title" id="Mrs" value="Mrs" required="required"/>Mrs.
+			<br><br>
+			<label for="firstName"><b>* First Name :</b></label>
+			<input type="text" name="firstName" id="firstName" placeholder="First Name" />	
+			<br><br>
+			<div id="error_firstName" style="display: none; color: rgb(165, 8, 8);">
+				Invalid name, please enter valid name.
+				<br><br>
+			</div>
+
+			<label for="lastName"><b>* Last Name :</b></label>
+			<input type="text" name="lastName" id="lastName" placeholder="Last Name" />
+			<br><br>
+			<div id="error_lastName" style="display: none; color: rgb(165, 8, 8);">
+				Invalid name, please enter valid name.
+				<br><br>
+			</div>
+
+			<label for="emailId"><b>* Email Id :</b></label>
+			<input type="text" name="email" id="email" placeholder="name@northeastern.edu" />
+			<br><br>
+			<div id="error_email" style="display: none; color: rgb(165, 8, 8);">
+				Invalid email, please enter valid email.
+				<br><br>
+			</div>
+
+			<label for="phoneNumber"><b>* Phone Number :</b></label>
+			<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" />
+			<br><br>
+			<div id="error_phoneNumber" style="display: none; color: rgb(165, 8, 8);">
+				Invalid phone number, please enter a valid phone number.
+				<br><br>
+			</div>
+			
+            <label for="zipCode"><b>* ZipCode :</b></label>
+			<input type="text" name="zipCode" id="zipCode" placeholder="xxxxx" />
+			<br><br>
+			<div id="error_zipCode" style="display: none; color: rgb(165, 8, 8);">
+				Invalid zip code, please enter a 5-digit zip code.
+				<br><br>
+			</div>
+
+			<div class="control">
+				<label for="selectBox"><b>* Select Option :</b></label>
+				<select id="selectBox" onchange=" itemDrop()">
+					<option value="">Favorite drink? </option>
+					<option value="Pumpkin cream cold brew">Pumpkin cream cold brew</option>
+					<option value="Nitro cold brew">Nitro cold brew</option>
+					<option value="Iced coffee">Iced coffee</option>
+					<option value="Cinnamon dolced latte">Cinnamon dolced latte</option>
+					<option value="Caramel mocha">Caramel mocha</option>
+				</select>
+			</div>
+
+			<div id="dynamicCheckboxDiv" style="display: none;">
+				<input type="checkbox" id="dynamicCheckbox" onchange="tipCheckBox()"> Rate
+
+			</div>
+			<div id="dynamicTextFieldDiv" style="display: none;">
+				<label for="dynamicTextField">Enter rating 1-10:</label>
+				<input type="text" id="dynamicTextField">
+				<div id="error_dynamicTextField" style="display: none; color: rgb(165, 8, 8);">Field is required</div>
+			</div>
+             <br><br>
+            
+			<label for="address"><b>* Address :</b></label>
+			<input type="text" name="address" id="address" placeholder="Boston, MA" />
+		
+			<br><br>
+			<div id="error_address" style="display: none; color: rgb(165, 8, 8);">
+				Invalid address, please enter a valid address without special characters.
+				<br><br>
+			</div>
+			<br>
+			<label id="howDidYouHear" for="howDidYouHear"><b>* How did you hear?:</b></label>
+			<input type='checkbox' name="source" value="facebook" /> Starbucks Website
+            <input type='checkbox' name="source" value="google" /> Social Media 
+            <input type='checkbox' name="source" value="yelp" /> Google Search 
+			<br><br> 
+
+			<br>
+
+			<label for="comments"><B> Comments :</B></label>
+			<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="20"></textarea>
+			<br><br>
+			<input id="submitBtn" type="Submit" disabled>
+			<input type="Reset">
+			<br><br>
+			
+			  </div>
+		 </form>
+	 </main>
+ </div>
+ </body>
+</html>
